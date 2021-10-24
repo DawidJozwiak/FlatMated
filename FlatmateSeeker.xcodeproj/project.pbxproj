@@ -1,0 +1,859 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		137B265B981AC86CAF3BAF3D /* Pods_FlatmateSeeker_FlatmateSeekerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8752A81D3D9BA4E51EF848DE /* Pods_FlatmateSeeker_FlatmateSeekerUITests.framework */; };
+		6FC226D3271C1C0700C3550D /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226D2271C1C0700C3550D /* LoginScreenViewController.swift */; };
+		6FC226D727246AC800C3550D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226D627246AC800C3550D /* RegisterViewController.swift */; };
+		6FC226D927248DE700C3550D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226D827248DE700C3550D /* Log.swift */; };
+		6FC226DC27249C5300C3550D /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226DB27249C5300C3550D /* InformationViewController.swift */; };
+		6FC226DE2724B16300C3550D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226DD2724B16300C3550D /* User.swift */; };
+		6FC226E02724CCDC00C3550D /* FirestoreCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226DF2724CCDC00C3550D /* FirestoreCollection.swift */; };
+		6FC226E22724CE6600C3550D /* FirestoreListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226E12724CE6600C3550D /* FirestoreListener.swift */; };
+		6FC226E52724D19A00C3550D /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226E32724D19900C3550D /* UserModel.xcdatamodeld */; };
+		6FC226E72724D7E500C3550D /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226E62724D7E500C3550D /* UserDataManager.swift */; };
+		6FF0D93C27191786005F2B0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0D93B27191786005F2B0B /* AppDelegate.swift */; };
+		6FF0D93E27191786005F2B0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0D93D27191786005F2B0B /* SceneDelegate.swift */; };
+		6FF0D94027191786005F2B0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0D93F27191786005F2B0B /* ViewController.swift */; };
+		6FF0D94327191786005F2B0B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FF0D94127191786005F2B0B /* Main.storyboard */; };
+		6FF0D9452719178D005F2B0B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6FF0D9442719178D005F2B0B /* Assets.xcassets */; };
+		6FF0D9482719178D005F2B0B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6FF0D9462719178D005F2B0B /* LaunchScreen.storyboard */; };
+		6FF0D9532719178F005F2B0B /* FlatmateSeekerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0D9522719178F005F2B0B /* FlatmateSeekerTests.swift */; };
+		6FF0D95D2719178F005F2B0B /* FlatmateSeekerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0D95C2719178F005F2B0B /* FlatmateSeekerUITests.swift */; };
+		6FF0D95F2719178F005F2B0B /* FlatmateSeekerUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0D95E2719178F005F2B0B /* FlatmateSeekerUITestsLaunchTests.swift */; };
+		6FF0D96C27191AD4005F2B0B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6FF0D96B27191AD4005F2B0B /* GoogleService-Info.plist */; };
+		E8A17A05A9BF239BE127F41B /* Pods_FlatmateSeekerTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC3C8B106CE804D350E990D3 /* Pods_FlatmateSeekerTests.framework */; };
+		FEEB09DED99A8F1EA3F3BA88 /* Pods_FlatmateSeeker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D597854359F4EE2C1486A39 /* Pods_FlatmateSeeker.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		6FF0D94F2719178F005F2B0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FF0D93027191785005F2B0B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FF0D93727191785005F2B0B;
+			remoteInfo = FlatmateSeeker;
+		};
+		6FF0D9592719178F005F2B0B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6FF0D93027191785005F2B0B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6FF0D93727191785005F2B0B;
+			remoteInfo = FlatmateSeeker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0EAB6792586B8F84C3F628A6 /* Pods-FlatmateSeekerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatmateSeekerTests.release.xcconfig"; path = "Target Support Files/Pods-FlatmateSeekerTests/Pods-FlatmateSeekerTests.release.xcconfig"; sourceTree = "<group>"; };
+		55ACE54415C2C55A8627FC91 /* Pods-FlatmateSeeker-FlatmateSeekerUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatmateSeeker-FlatmateSeekerUITests.release.xcconfig"; path = "Target Support Files/Pods-FlatmateSeeker-FlatmateSeekerUITests/Pods-FlatmateSeeker-FlatmateSeekerUITests.release.xcconfig"; sourceTree = "<group>"; };
+		5709D18A33F9C41CA119E2E7 /* Pods-FlatmateSeekerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatmateSeekerTests.debug.xcconfig"; path = "Target Support Files/Pods-FlatmateSeekerTests/Pods-FlatmateSeekerTests.debug.xcconfig"; sourceTree = "<group>"; };
+		5D597854359F4EE2C1486A39 /* Pods_FlatmateSeeker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlatmateSeeker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6865655C6B556198B546C4E6 /* Pods-FlatmateSeeker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatmateSeeker.release.xcconfig"; path = "Target Support Files/Pods-FlatmateSeeker/Pods-FlatmateSeeker.release.xcconfig"; sourceTree = "<group>"; };
+		6FC226D2271C1C0700C3550D /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
+		6FC226D627246AC800C3550D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		6FC226D827248DE700C3550D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Log.swift; path = "../New Group/Log.swift"; sourceTree = "<group>"; };
+		6FC226DB27249C5300C3550D /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		6FC226DD2724B16300C3550D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		6FC226DF2724CCDC00C3550D /* FirestoreCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreCollection.swift; sourceTree = "<group>"; };
+		6FC226E12724CE6600C3550D /* FirestoreListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreListener.swift; sourceTree = "<group>"; };
+		6FC226E42724D19A00C3550D /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
+		6FC226E62724D7E500C3550D /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
+		6FF0D93827191786005F2B0B /* FlatmateSeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlatmateSeeker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FF0D93B27191786005F2B0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6FF0D93D27191786005F2B0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		6FF0D93F27191786005F2B0B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6FF0D94227191786005F2B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6FF0D9442719178D005F2B0B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6FF0D9472719178D005F2B0B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6FF0D9492719178D005F2B0B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6FF0D94E2719178F005F2B0B /* FlatmateSeekerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlatmateSeekerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FF0D9522719178F005F2B0B /* FlatmateSeekerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatmateSeekerTests.swift; sourceTree = "<group>"; };
+		6FF0D9582719178F005F2B0B /* FlatmateSeekerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlatmateSeekerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FF0D95C2719178F005F2B0B /* FlatmateSeekerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatmateSeekerUITests.swift; sourceTree = "<group>"; };
+		6FF0D95E2719178F005F2B0B /* FlatmateSeekerUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlatmateSeekerUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		6FF0D96B27191AD4005F2B0B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8752A81D3D9BA4E51EF848DE /* Pods_FlatmateSeeker_FlatmateSeekerUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlatmateSeeker_FlatmateSeekerUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B674DFB5658A49A1FEFD61C6 /* Pods-FlatmateSeeker-FlatmateSeekerUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatmateSeeker-FlatmateSeekerUITests.debug.xcconfig"; path = "Target Support Files/Pods-FlatmateSeeker-FlatmateSeekerUITests/Pods-FlatmateSeeker-FlatmateSeekerUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CC3C8B106CE804D350E990D3 /* Pods_FlatmateSeekerTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlatmateSeekerTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F79CE4A63FD56E6A87BF3AF3 /* Pods-FlatmateSeeker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatmateSeeker.debug.xcconfig"; path = "Target Support Files/Pods-FlatmateSeeker/Pods-FlatmateSeeker.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6FF0D93527191785005F2B0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FEEB09DED99A8F1EA3F3BA88 /* Pods_FlatmateSeeker.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FF0D94B2719178F005F2B0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E8A17A05A9BF239BE127F41B /* Pods_FlatmateSeekerTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FF0D9552719178F005F2B0B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				137B265B981AC86CAF3BAF3D /* Pods_FlatmateSeeker_FlatmateSeekerUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6FC226D4271C1CB300C3550D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6FC226E12724CE6600C3550D /* FirestoreListener.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6FC226D5271C1CBF00C3550D /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6FC226DA27248DEF00C3550D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6FC226E32724D19900C3550D /* UserModel.xcdatamodeld */,
+				6FC226DD2724B16300C3550D /* User.swift */,
+				6FC226D827248DE700C3550D /* Log.swift */,
+				6FC226DF2724CCDC00C3550D /* FirestoreCollection.swift */,
+				6FC226E62724D7E500C3550D /* UserDataManager.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6FF0D92F27191785005F2B0B = {
+			isa = PBXGroup;
+			children = (
+				6FF0D93A27191786005F2B0B /* FlatmateSeeker */,
+				6FF0D9512719178F005F2B0B /* FlatmateSeekerTests */,
+				6FF0D95B2719178F005F2B0B /* FlatmateSeekerUITests */,
+				6FF0D93927191786005F2B0B /* Products */,
+				EB3811E51FAD8BEAF00C41A2 /* Pods */,
+				C1136247F54D96ACFA0760D9 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		6FF0D93927191786005F2B0B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6FF0D93827191786005F2B0B /* FlatmateSeeker.app */,
+				6FF0D94E2719178F005F2B0B /* FlatmateSeekerTests.xctest */,
+				6FF0D9582719178F005F2B0B /* FlatmateSeekerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6FF0D93A27191786005F2B0B /* FlatmateSeeker */ = {
+			isa = PBXGroup;
+			children = (
+				6FC226DA27248DEF00C3550D /* Model */,
+				6FC226D5271C1CBF00C3550D /* View */,
+				6FC226D4271C1CB300C3550D /* ViewControllers */,
+				6FF0D93B27191786005F2B0B /* AppDelegate.swift */,
+				6FF0D93D27191786005F2B0B /* SceneDelegate.swift */,
+				6FF0D93F27191786005F2B0B /* ViewController.swift */,
+				6FF0D94127191786005F2B0B /* Main.storyboard */,
+				6FC226DB27249C5300C3550D /* InformationViewController.swift */,
+				6FC226D627246AC800C3550D /* RegisterViewController.swift */,
+				6FC226D2271C1C0700C3550D /* LoginScreenViewController.swift */,
+				6FF0D96B27191AD4005F2B0B /* GoogleService-Info.plist */,
+				6FF0D9442719178D005F2B0B /* Assets.xcassets */,
+				6FF0D9462719178D005F2B0B /* LaunchScreen.storyboard */,
+				6FF0D9492719178D005F2B0B /* Info.plist */,
+			);
+			path = FlatmateSeeker;
+			sourceTree = "<group>";
+		};
+		6FF0D9512719178F005F2B0B /* FlatmateSeekerTests */ = {
+			isa = PBXGroup;
+			children = (
+				6FF0D9522719178F005F2B0B /* FlatmateSeekerTests.swift */,
+			);
+			path = FlatmateSeekerTests;
+			sourceTree = "<group>";
+		};
+		6FF0D95B2719178F005F2B0B /* FlatmateSeekerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				6FF0D95C2719178F005F2B0B /* FlatmateSeekerUITests.swift */,
+				6FF0D95E2719178F005F2B0B /* FlatmateSeekerUITestsLaunchTests.swift */,
+			);
+			path = FlatmateSeekerUITests;
+			sourceTree = "<group>";
+		};
+		C1136247F54D96ACFA0760D9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D597854359F4EE2C1486A39 /* Pods_FlatmateSeeker.framework */,
+				8752A81D3D9BA4E51EF848DE /* Pods_FlatmateSeeker_FlatmateSeekerUITests.framework */,
+				CC3C8B106CE804D350E990D3 /* Pods_FlatmateSeekerTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB3811E51FAD8BEAF00C41A2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				F79CE4A63FD56E6A87BF3AF3 /* Pods-FlatmateSeeker.debug.xcconfig */,
+				6865655C6B556198B546C4E6 /* Pods-FlatmateSeeker.release.xcconfig */,
+				B674DFB5658A49A1FEFD61C6 /* Pods-FlatmateSeeker-FlatmateSeekerUITests.debug.xcconfig */,
+				55ACE54415C2C55A8627FC91 /* Pods-FlatmateSeeker-FlatmateSeekerUITests.release.xcconfig */,
+				5709D18A33F9C41CA119E2E7 /* Pods-FlatmateSeekerTests.debug.xcconfig */,
+				0EAB6792586B8F84C3F628A6 /* Pods-FlatmateSeekerTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6FF0D93727191785005F2B0B /* FlatmateSeeker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FF0D9622719178F005F2B0B /* Build configuration list for PBXNativeTarget "FlatmateSeeker" */;
+			buildPhases = (
+				102CA0C47EABF0A9B66FFF9E /* [CP] Check Pods Manifest.lock */,
+				6FF0D93427191785005F2B0B /* Sources */,
+				6FF0D93527191785005F2B0B /* Frameworks */,
+				6FF0D93627191785005F2B0B /* Resources */,
+				E9761E31EA87FA891376234E /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FlatmateSeeker;
+			productName = FlatmateSeeker;
+			productReference = 6FF0D93827191786005F2B0B /* FlatmateSeeker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6FF0D94D2719178F005F2B0B /* FlatmateSeekerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FF0D9652719178F005F2B0B /* Build configuration list for PBXNativeTarget "FlatmateSeekerTests" */;
+			buildPhases = (
+				63FD8693F45F223D4FD9CC00 /* [CP] Check Pods Manifest.lock */,
+				6FF0D94A2719178F005F2B0B /* Sources */,
+				6FF0D94B2719178F005F2B0B /* Frameworks */,
+				6FF0D94C2719178F005F2B0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6FF0D9502719178F005F2B0B /* PBXTargetDependency */,
+			);
+			name = FlatmateSeekerTests;
+			productName = FlatmateSeekerTests;
+			productReference = 6FF0D94E2719178F005F2B0B /* FlatmateSeekerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6FF0D9572719178F005F2B0B /* FlatmateSeekerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FF0D9682719178F005F2B0B /* Build configuration list for PBXNativeTarget "FlatmateSeekerUITests" */;
+			buildPhases = (
+				482D4DE6B7B38F8363479C5E /* [CP] Check Pods Manifest.lock */,
+				6FF0D9542719178F005F2B0B /* Sources */,
+				6FF0D9552719178F005F2B0B /* Frameworks */,
+				6FF0D9562719178F005F2B0B /* Resources */,
+				37029546A1A14149434A97DD /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6FF0D95A2719178F005F2B0B /* PBXTargetDependency */,
+			);
+			name = FlatmateSeekerUITests;
+			productName = FlatmateSeekerUITests;
+			productReference = 6FF0D9582719178F005F2B0B /* FlatmateSeekerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6FF0D93027191785005F2B0B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1300;
+				LastUpgradeCheck = 1300;
+				TargetAttributes = {
+					6FF0D93727191785005F2B0B = {
+						CreatedOnToolsVersion = 13.0;
+					};
+					6FF0D94D2719178F005F2B0B = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 6FF0D93727191785005F2B0B;
+					};
+					6FF0D9572719178F005F2B0B = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = 6FF0D93727191785005F2B0B;
+					};
+				};
+			};
+			buildConfigurationList = 6FF0D93327191785005F2B0B /* Build configuration list for PBXProject "FlatmateSeeker" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6FF0D92F27191785005F2B0B;
+			productRefGroup = 6FF0D93927191786005F2B0B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6FF0D93727191785005F2B0B /* FlatmateSeeker */,
+				6FF0D94D2719178F005F2B0B /* FlatmateSeekerTests */,
+				6FF0D9572719178F005F2B0B /* FlatmateSeekerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6FF0D93627191785005F2B0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FF0D9482719178D005F2B0B /* LaunchScreen.storyboard in Resources */,
+				6FF0D96C27191AD4005F2B0B /* GoogleService-Info.plist in Resources */,
+				6FF0D9452719178D005F2B0B /* Assets.xcassets in Resources */,
+				6FF0D94327191786005F2B0B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FF0D94C2719178F005F2B0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FF0D9562719178F005F2B0B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		102CA0C47EABF0A9B66FFF9E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlatmateSeeker-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		37029546A1A14149434A97DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlatmateSeeker-FlatmateSeekerUITests/Pods-FlatmateSeeker-FlatmateSeekerUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlatmateSeeker-FlatmateSeekerUITests/Pods-FlatmateSeeker-FlatmateSeekerUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlatmateSeeker-FlatmateSeekerUITests/Pods-FlatmateSeeker-FlatmateSeekerUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		482D4DE6B7B38F8363479C5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlatmateSeeker-FlatmateSeekerUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		63FD8693F45F223D4FD9CC00 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlatmateSeekerTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9761E31EA87FA891376234E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlatmateSeeker/Pods-FlatmateSeeker-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlatmateSeeker/Pods-FlatmateSeeker-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlatmateSeeker/Pods-FlatmateSeeker-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6FF0D93427191785005F2B0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FF0D94027191786005F2B0B /* ViewController.swift in Sources */,
+				6FC226D727246AC800C3550D /* RegisterViewController.swift in Sources */,
+				6FC226DC27249C5300C3550D /* InformationViewController.swift in Sources */,
+				6FC226D927248DE700C3550D /* Log.swift in Sources */,
+				6FC226DE2724B16300C3550D /* User.swift in Sources */,
+				6FC226E22724CE6600C3550D /* FirestoreListener.swift in Sources */,
+				6FC226E02724CCDC00C3550D /* FirestoreCollection.swift in Sources */,
+				6FF0D93C27191786005F2B0B /* AppDelegate.swift in Sources */,
+				6FC226E72724D7E500C3550D /* UserDataManager.swift in Sources */,
+				6FC226E52724D19A00C3550D /* UserModel.xcdatamodeld in Sources */,
+				6FC226D3271C1C0700C3550D /* LoginScreenViewController.swift in Sources */,
+				6FF0D93E27191786005F2B0B /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FF0D94A2719178F005F2B0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FF0D9532719178F005F2B0B /* FlatmateSeekerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6FF0D9542719178F005F2B0B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6FF0D95D2719178F005F2B0B /* FlatmateSeekerUITests.swift in Sources */,
+				6FF0D95F2719178F005F2B0B /* FlatmateSeekerUITestsLaunchTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6FF0D9502719178F005F2B0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FF0D93727191785005F2B0B /* FlatmateSeeker */;
+			targetProxy = 6FF0D94F2719178F005F2B0B /* PBXContainerItemProxy */;
+		};
+		6FF0D95A2719178F005F2B0B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6FF0D93727191785005F2B0B /* FlatmateSeeker */;
+			targetProxy = 6FF0D9592719178F005F2B0B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		6FF0D94127191786005F2B0B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FF0D94227191786005F2B0B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		6FF0D9462719178D005F2B0B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6FF0D9472719178D005F2B0B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6FF0D9602719178F005F2B0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6FF0D9612719178F005F2B0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6FF0D9632719178F005F2B0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F79CE4A63FD56E6A87BF3AF3 /* Pods-FlatmateSeeker.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlatmateSeeker/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DawidJozwiak.FlatmateSeeker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6FF0D9642719178F005F2B0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6865655C6B556198B546C4E6 /* Pods-FlatmateSeeker.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = FlatmateSeeker/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DawidJozwiak.FlatmateSeeker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6FF0D9662719178F005F2B0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5709D18A33F9C41CA119E2E7 /* Pods-FlatmateSeekerTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DawidJozwiak.FlatmateSeekerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlatmateSeeker.app/FlatmateSeeker";
+			};
+			name = Debug;
+		};
+		6FF0D9672719178F005F2B0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0EAB6792586B8F84C3F628A6 /* Pods-FlatmateSeekerTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DawidJozwiak.FlatmateSeekerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/FlatmateSeeker.app/FlatmateSeeker";
+			};
+			name = Release;
+		};
+		6FF0D9692719178F005F2B0B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B674DFB5658A49A1FEFD61C6 /* Pods-FlatmateSeeker-FlatmateSeekerUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DawidJozwiak.FlatmateSeekerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlatmateSeeker;
+			};
+			name = Debug;
+		};
+		6FF0D96A2719178F005F2B0B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 55ACE54415C2C55A8627FC91 /* Pods-FlatmateSeeker-FlatmateSeekerUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = DawidJozwiak.FlatmateSeekerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = FlatmateSeeker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6FF0D93327191785005F2B0B /* Build configuration list for PBXProject "FlatmateSeeker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FF0D9602719178F005F2B0B /* Debug */,
+				6FF0D9612719178F005F2B0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FF0D9622719178F005F2B0B /* Build configuration list for PBXNativeTarget "FlatmateSeeker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FF0D9632719178F005F2B0B /* Debug */,
+				6FF0D9642719178F005F2B0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FF0D9652719178F005F2B0B /* Build configuration list for PBXNativeTarget "FlatmateSeekerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FF0D9662719178F005F2B0B /* Debug */,
+				6FF0D9672719178F005F2B0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FF0D9682719178F005F2B0B /* Build configuration list for PBXNativeTarget "FlatmateSeekerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6FF0D9692719178F005F2B0B /* Debug */,
+				6FF0D96A2719178F005F2B0B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		6FC226E32724D19900C3550D /* UserModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6FC226E42724D19A00C3550D /* UserModel.xcdatamodel */,
+			);
+			currentVersion = 6FC226E42724D19A00C3550D /* UserModel.xcdatamodel */;
+			name = UserModel.xcdatamodeld;
+			path = ../UserModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 6FF0D93027191785005F2B0B /* Project object */;
+}

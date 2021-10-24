@@ -1,0 +1,6 @@
+framework module Pods_FlatmateSeekerTests {
+  umbrella header "Pods-FlatmateSeekerTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
