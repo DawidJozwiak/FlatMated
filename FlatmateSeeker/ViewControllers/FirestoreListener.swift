@@ -10,19 +10,55 @@ import FirebaseAuth
 
 class FirestoreListener {
     
-    static let shared = FirestoreListener()
+    static let sharedInstance = FirestoreListener()
     
     private init() {}
     
-    func getUser(userID: String) {
-        FirestoreReference(.User).document(userID).getDocument(completion: { (snapshot, error) in
+    func downloadUserFromFirestore(user: User) {
+        FirestoreReference(.User).document(user.id).getDocument(completion: { (snapshot, error) in
             guard let snapshot = snapshot else {
                 print(#file, #function, "Snapshot not found!", 1, [1,2], to: &Log.log)
                 return 
             }
-            
             if snapshot.exists {
-         //       let user = User(_id: snapshot., _name: <#T##String#>, _city: <#T##String#>, _age: <#T##Int#>, _isMale: <#T##Bool#>, _occupation: <#T##String#>, _hasFlat: <#T##Bool#>)
+                if !DataManager.sharedInstance.isEmpty {
+                    DataManager.sharedInstance.deleteUser()
+                }
+                user.dictionaryToUser(dictionary: snapshot.data()!)
+            }
+            else {
+                if !DataManager.sharedInstance.isEmpty {
+                    DataManager.sharedInstance.deleteUser()
+                }
+                DataManager.sharedInstance.createUser(user)
+                self.saveUserToFireStore(user: user)
+            }
+        })
+    }
+    
+    func downloadExistingUserFromFirestore(id: String) -> User {
+        var dictionary : [String : Any] = ["" : ""]
+        FirestoreReference(.User).document(id).getDocument(completion: { (snapshot, error) in
+            guard let snapshot = snapshot else {
+                print(#file, #function, "Snapshot not found!", 1, [1,2], to: &Log.log)
+                return
+            }
+            if snapshot.exists {
+                if !DataManager.sharedInstance.isEmpty {
+                    DataManager.sharedInstance.deleteUser()
+                }
+                dictionary = snapshot.data()!
+            }
+        })
+        let user = User(dictionary: dictionary)
+        return user
+    }
+                                                                
+    
+    func saveUserToFireStore(user: User){
+        FirestoreReference(.User).document(user.id).setData(user.userToDictionary(), completion: { (error) in
+            if let error = error {
+                print(#file, #function, error.localizedDescription, 1, [1,2], to: &Log.log)
             }
         })
     }

@@ -8,9 +8,9 @@
 import Foundation
 import Firebase
 
-public class User {
+public class User: Equatable {
     
-    let id: String
+    var id: String
     var name: String
     var age: Int
     var city: String
@@ -18,7 +18,7 @@ public class User {
    // var avatar: UIImage?
     var occupation: String
     var description: String
-    var matchedUsers: [String]?
+    var matchedUsers: [String]
     var registeredDate = Date()
     var hasFlat: Bool
     
@@ -35,15 +35,36 @@ public class User {
         matchedUsers = []
     }
     
+    init(dictionary: [String : Any]) {
+        self.id = dictionary["id"] as! String
+        self.name = dictionary["name"] as! String
+        self.age = dictionary["age"] as! Int
+        self.city = dictionary["city"] as! String
+        self.isMale = dictionary["isMale"] as! Bool
+        self.occupation = dictionary["occupation"] as! String
+        self.description = dictionary["description"] as! String
+        self.hasFlat = dictionary["hasFlat"] as! Bool
+        self.matchedUsers = dictionary["matchedUsers"] as! [String]
+    }
+    
     public static func == (lhs: User, rhs: User) -> Bool {
         lhs.id == rhs.id
     }
     
-    func createUser(authData: AuthDataResult, name: String, city: String, age: Int, occupation: String, gender: Bool, flat: Bool, completion: @escaping (_ error: Error?) -> Void) {
-        let user = User(_id: authData.user.uid, _name: name, _city: city, _age: age, _isMale: gender, _occupation: occupation, _hasFlat: flat)
-        
+    func userToDictionary() -> [String : Any] {
+        return ["id" : self.id, "name" : self.name, "city" : self.city, "age" : self.age, "isMale" : self.isMale, "hasFlat" : self.hasFlat, "occupation" : self.occupation, "description" : self.description, "matchedUsers" : self.matchedUsers]
     }
     
-    
+    func dictionaryToUser(dictionary: [String : Any]) {
+        self.id = dictionary["id"] as! String
+        self.name = dictionary["name"] as! String
+        self.age = dictionary["age"] as! Int
+        self.city = dictionary["city"] as! String
+        self.isMale = dictionary["isMale"] as! Bool
+        self.occupation = dictionary["occupation"] as! String
+        self.description = dictionary["description"] as! String
+        self.hasFlat = dictionary["hasFlat"] as! Bool
+        self.matchedUsers = dictionary["matchedUsers"] as! [String]
+    }
 }
 

@@ -7,6 +7,7 @@
 
 import UIKit
 import Firebase
+import ProgressHUD
 
 class LoginScreenViewController: UIViewController {
 
@@ -31,12 +32,14 @@ class LoginScreenViewController: UIViewController {
             presentAlert(title: "Incorrect Input", message: "Please fill all required feilds then press Next button")
             return
         }
+        ProgressHUD.show()
         Auth.auth().signIn(withEmail: userEmail, password: userPassword, completion: { (authDataResult, error) in
             if let error = error {
                 self.presentAlert(title: "Incorrect Input", message: error.localizedDescription)
                 return
             }
-            #warning("SEGUE")
+            ProgressHUD.dismiss()
+            self.performSegue(withIdentifier: "loggingCompleted", sender: self)
         })
     }
     

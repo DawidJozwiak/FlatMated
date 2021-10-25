@@ -14,6 +14,7 @@ pod 'Firebase/Performance'
 pod 'Firebase/InAppMessaging'
 pod 'Firebase/Storage'
 pod 'Firebase/Auth'
+pod 'Firebase/Crashlytics'
 
 pod 'Gallery'
 

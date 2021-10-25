@@ -16,6 +16,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var confirmPassword: UITextField!
     @IBOutlet weak var termsSwitch: UISwitch!
     let db = Firestore.firestore()
+    var id = ""
     
     
     override func viewDidLoad() {
@@ -61,6 +62,7 @@ class RegisterViewController: UIViewController {
                 }
                 
             })
+            self.id = authResult!.user.uid
             self.performSegue(withIdentifier: "moreInformation", sender: self)
         }
     }

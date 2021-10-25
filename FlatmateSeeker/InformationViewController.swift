@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Firebase
 
 class InformationViewController: UIViewController {
 
@@ -30,17 +31,17 @@ class InformationViewController: UIViewController {
             print(#file, #function, "UI elements could not be found", 1, [1,2], to: &Log.log)
             return
         }
-        guard !name.isEmpty && !city.isEmpty && !age.isEmpty && !occupation.isEmpty else {
+        guard let age = Int(age) else {
+            presentAlert(title: "Incorrect Input", message: "Age can only be a numerical value")
+            return
+        }
+        guard !name.isEmpty && !city.isEmpty && !occupation.isEmpty else {
             presentAlert(title: "Incorrect Input", message: "Please fill all required feilds then press Next button")
             return
         }
-      /*  Auth.auth().createUser(withEmail: userEmail, password: userPassword) { authResult, error in
-            if let error = error {
-                self.presentAlert(title: "Incorrect Input", message: error.localizedDescription)
-                return
-            }
-            self.performSegue(withIdentifier: "moreInformation", sender: self)
-       }*/
+        let user = User(_id: Firebase.Auth.auth().currentUser!.uid, _name: name, _city: city, _age: age, _isMale: gender.isEnabled, _occupation: occupation, _hasFlat: flat.isEnabled)
+        FirestoreListener.sharedInstance.downloadUserFromFirestore(user: user)
+        performSegue(withIdentifier: "registrationCompleted", sender: self)
     }
     
     func presentAlert(title: String, message: String){
