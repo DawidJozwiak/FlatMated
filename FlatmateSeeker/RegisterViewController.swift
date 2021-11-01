@@ -60,7 +60,6 @@ class RegisterViewController: UIViewController {
                 if let error = error {
                     print(#file, #function, "Verification email has failed: \(error.localizedDescription)", 1, [1,2], to: &Log.log)
                 }
-                
             })
             self.id = authResult!.user.uid
             self.performSegue(withIdentifier: "moreInformation", sender: self)

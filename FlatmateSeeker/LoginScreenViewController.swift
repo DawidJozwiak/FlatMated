@@ -16,7 +16,6 @@ class LoginScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -38,8 +37,17 @@ class LoginScreenViewController: UIViewController {
                 self.presentAlert(title: "Incorrect Input", message: error.localizedDescription)
                 return
             }
-            ProgressHUD.dismiss()
-            self.performSegue(withIdentifier: "loggingCompleted", sender: self)
+            let id = Firebase.Auth.auth().currentUser!.uid
+            FirestoreListener.sharedInstance.downloadExistingUserFromFirestore(id: id) { user in
+                if let user = user {
+                    DataManager.sharedInstance.createUser(user)
+                    ProgressHUD.dismiss()
+                    self.performSegue(withIdentifier: "loggingCompleted", sender: self)
+                } else {
+                    print(#file, #function, "Error while logging in", 1, [1,2], to: &Log.log)
+                    ProgressHUD.dismiss()
+                }
+            }
         })
     }
     

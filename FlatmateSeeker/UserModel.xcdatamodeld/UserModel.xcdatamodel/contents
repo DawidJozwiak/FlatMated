@@ -3,9 +3,11 @@
     <entity name="UserData" representedClassName="UserData" syncable="YES" codeGenerationType="class">
         <attribute name="age" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="disliked" optional="YES" attributeType="Transformable"/>
         <attribute name="hasFlat" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="isMale" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="liked" optional="YES" attributeType="Transformable"/>
         <attribute name="matchedUsers" optional="YES" attributeType="Transformable"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="occupation" optional="YES" attributeType="String"/>
@@ -13,6 +15,6 @@
         <attribute name="userDescription" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="UserData" positionX="-54" positionY="-81" width="128" height="179"/>
+        <element name="UserData" positionX="-54" positionY="-81" width="128" height="209"/>
     </elements>
 </model>

@@ -35,6 +35,8 @@ open class DataManager: NSObject {
         userData.setValue(user.matchedUsers, forKey: "matchedUsers")
         userData.setValue(user.registeredDate, forKey: "registeredDate")
         userData.setValue(user.description, forKey: "userDescription")
+        userData.setValue(user.liked, forKey: "liked")
+        userData.setValue(user.disliked, forKey: "disliked")
         do {
             print("Saving session...")
             try managedContext.save()
@@ -76,7 +78,6 @@ open class DataManager: NSObject {
         guard let managedContext = getContext() else { return }
         let fetchRequest: NSFetchRequest<NSFetchRequestResult> = NSFetchRequest(entityName: "UserData")
         let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
-
         do {
             try managedContext.execute(deleteRequest)
             try managedContext.save()
@@ -84,6 +85,23 @@ open class DataManager: NSObject {
             print("Failed to delete user! \(error): \(error.userInfo)")
         }
         
+    }
+    
+    func retriveCurrentUserObject() -> User {
+        let dbData = retrieveUser()
+        var userDict: [String : Any] = [:]
+        userDict["id"] = dbData?.value(forKey: "id")
+        userDict["name"] = dbData?.value(forKey: "name")
+        userDict["city"] = dbData?.value(forKey: "city")
+        userDict["age"] = dbData?.value(forKey: "age")
+        userDict["isMale"] = dbData?.value(forKey: "isMale")
+        userDict["hasFlat"] = dbData?.value(forKey: "hasFlat")
+        userDict["occupation"] = dbData?.value(forKey: "occupation")
+        userDict["description"] = dbData?.value(forKey: "userDescription")
+        userDict["matchedUsers"] = dbData?.value(forKey: "matchedUsers")
+        userDict["liked"] = dbData?.value(forKey: "liked")
+        userDict["disliked"] = dbData?.value(forKey: "disliked")
+        return User(dictionary: userDict)
     }
     
     private lazy var userEntity: NSEntityDescription = {

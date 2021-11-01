@@ -21,6 +21,8 @@ public class User: Equatable {
     var matchedUsers: [String]
     var registeredDate = Date()
     var hasFlat: Bool
+    var liked: [String]
+    var disliked: [String]
     
     init(_id: String, _name: String, _city: String, _age: Int, _isMale: Bool, _occupation: String, _hasFlat: Bool) {
         id = _id
@@ -33,6 +35,8 @@ public class User: Equatable {
         occupation = _occupation
         description = ""
         matchedUsers = []
+        disliked = []
+        liked = []
     }
     
     init(dictionary: [String : Any]) {
@@ -45,6 +49,8 @@ public class User: Equatable {
         self.description = dictionary["description"] as! String
         self.hasFlat = dictionary["hasFlat"] as! Bool
         self.matchedUsers = dictionary["matchedUsers"] as! [String]
+        self.liked = dictionary["liked"] as! [String]
+        self.disliked = dictionary["disliked"] as! [String]
     }
     
     public static func == (lhs: User, rhs: User) -> Bool {
@@ -52,7 +58,7 @@ public class User: Equatable {
     }
     
     func userToDictionary() -> [String : Any] {
-        return ["id" : self.id, "name" : self.name, "city" : self.city, "age" : self.age, "isMale" : self.isMale, "hasFlat" : self.hasFlat, "occupation" : self.occupation, "description" : self.description, "matchedUsers" : self.matchedUsers]
+        return ["id" : self.id, "name" : self.name, "city" : self.city, "age" : self.age, "isMale" : self.isMale, "hasFlat" : self.hasFlat, "occupation" : self.occupation, "description" : self.description, "matchedUsers" : self.matchedUsers, "liked" : self.liked, "disliked" : self.disliked]
     }
     
     func dictionaryToUser(dictionary: [String : Any]) {
@@ -65,6 +71,9 @@ public class User: Equatable {
         self.description = dictionary["description"] as! String
         self.hasFlat = dictionary["hasFlat"] as! Bool
         self.matchedUsers = dictionary["matchedUsers"] as! [String]
+        
+        self.liked = dictionary["liked"] as! [String]
+        self.disliked = dictionary["disliked"] as! [String]
     }
 }
 

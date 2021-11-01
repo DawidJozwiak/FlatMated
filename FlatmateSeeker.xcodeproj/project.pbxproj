@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		137B265B981AC86CAF3BAF3D /* Pods_FlatmateSeeker_FlatmateSeekerUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8752A81D3D9BA4E51EF848DE /* Pods_FlatmateSeeker_FlatmateSeekerUITests.framework */; };
+		6F1DA12D272E1652001608F0 /* ProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA12C272E1652001608F0 /* ProfileTableViewController.swift */; };
+		6F1DA12F272E1B5A001608F0 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA12E272E1B5A001608F0 /* Preferences.swift */; };
+		6F1DA133272E4034001608F0 /* DislikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA132272E4034001608F0 /* DislikeViewController.swift */; };
+		6F1DA135272F0139001608F0 /* LikeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA134272F0139001608F0 /* LikeTableViewController.swift */; };
 		6F217AF72726239C00054924 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F217AF62726239B00054924 /* MainViewController.swift */; };
-		6F217AF9272628C100054924 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F217AF8272628C100054924 /* ProfileViewController.swift */; };
 		6FC226D3271C1C0700C3550D /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226D2271C1C0700C3550D /* LoginScreenViewController.swift */; };
 		6FC226D727246AC800C3550D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226D627246AC800C3550D /* RegisterViewController.swift */; };
 		6FC226D927248DE700C3550D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226D827248DE700C3550D /* Log.swift */; };
@@ -56,8 +59,11 @@
 		5709D18A33F9C41CA119E2E7 /* Pods-FlatmateSeekerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatmateSeekerTests.debug.xcconfig"; path = "Target Support Files/Pods-FlatmateSeekerTests/Pods-FlatmateSeekerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5D597854359F4EE2C1486A39 /* Pods_FlatmateSeeker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlatmateSeeker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6865655C6B556198B546C4E6 /* Pods-FlatmateSeeker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlatmateSeeker.release.xcconfig"; path = "Target Support Files/Pods-FlatmateSeeker/Pods-FlatmateSeeker.release.xcconfig"; sourceTree = "<group>"; };
+		6F1DA12C272E1652001608F0 /* ProfileTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewController.swift; sourceTree = "<group>"; };
+		6F1DA12E272E1B5A001608F0 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
+		6F1DA132272E4034001608F0 /* DislikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DislikeViewController.swift; sourceTree = "<group>"; };
+		6F1DA134272F0139001608F0 /* LikeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeTableViewController.swift; sourceTree = "<group>"; };
 		6F217AF62726239B00054924 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = FlatmateSeeker/ViewControllers/MainViewController.swift; sourceTree = SOURCE_ROOT; };
-		6F217AF8272628C100054924 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		6FC226D2271C1C0700C3550D /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		6FC226D627246AC800C3550D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6FC226D827248DE700C3550D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Log.swift; path = "../New Group/Log.swift"; sourceTree = "<group>"; };
@@ -139,6 +145,7 @@
 				6FC226D827248DE700C3550D /* Log.swift */,
 				6FC226DF2724CCDC00C3550D /* FirestoreCollection.swift */,
 				6FC226E62724D7E500C3550D /* UserDataManager.swift */,
+				6F1DA12E272E1B5A001608F0 /* Preferences.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -175,7 +182,9 @@
 				6FF0D93D27191786005F2B0B /* SceneDelegate.swift */,
 				6FF0D93F27191786005F2B0B /* ViewController.swift */,
 				6FF0D94127191786005F2B0B /* Main.storyboard */,
-				6F217AF8272628C100054924 /* ProfileViewController.swift */,
+				6F1DA134272F0139001608F0 /* LikeTableViewController.swift */,
+				6F1DA132272E4034001608F0 /* DislikeViewController.swift */,
+				6F1DA12C272E1652001608F0 /* ProfileTableViewController.swift */,
 				6FC226DB27249C5300C3550D /* InformationViewController.swift */,
 				6FC226D627246AC800C3550D /* RegisterViewController.swift */,
 				6FC226D2271C1C0700C3550D /* LoginScreenViewController.swift */,
@@ -467,16 +476,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F1DA12D272E1652001608F0 /* ProfileTableViewController.swift in Sources */,
 				6FF0D94027191786005F2B0B /* ViewController.swift in Sources */,
+				6F1DA135272F0139001608F0 /* LikeTableViewController.swift in Sources */,
 				6F217AF72726239C00054924 /* MainViewController.swift in Sources */,
+				6F1DA12F272E1B5A001608F0 /* Preferences.swift in Sources */,
 				6FC226D727246AC800C3550D /* RegisterViewController.swift in Sources */,
 				6FC226DC27249C5300C3550D /* InformationViewController.swift in Sources */,
-				6F217AF9272628C100054924 /* ProfileViewController.swift in Sources */,
 				6FC226D927248DE700C3550D /* Log.swift in Sources */,
 				6FC226DE2724B16300C3550D /* User.swift in Sources */,
 				6FC226E22724CE6600C3550D /* FirestoreListener.swift in Sources */,
 				6FC226E02724CCDC00C3550D /* FirestoreCollection.swift in Sources */,
 				6FF0D93C27191786005F2B0B /* AppDelegate.swift in Sources */,
+				6F1DA133272E4034001608F0 /* DislikeViewController.swift in Sources */,
 				6FC226E72724D7E500C3550D /* UserDataManager.swift in Sources */,
 				6FC226E52724D19A00C3550D /* UserModel.xcdatamodeld in Sources */,
 				6FC226D3271C1C0700C3550D /* LoginScreenViewController.swift in Sources */,
