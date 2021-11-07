@@ -36,7 +36,6 @@ class LikeTableViewController: UITableViewController {
                 return nil
             }
         }
-
         return indexPath
     }
     

@@ -35,6 +35,7 @@ class LoginScreenViewController: UIViewController {
         Auth.auth().signIn(withEmail: userEmail, password: userPassword, completion: { (authDataResult, error) in
             if let error = error {
                 self.presentAlert(title: "Incorrect Input", message: error.localizedDescription)
+                ProgressHUD.dismiss()
                 return
             }
             let id = Firebase.Auth.auth().currentUser!.uid
@@ -61,6 +62,10 @@ class LoginScreenViewController: UIViewController {
         view.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundTap))
         view.addGestureRecognizer(tapGesture)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segue.destination.modalPresentationStyle = .fullScreen
     }
     
     @objc func backgroundTap(){

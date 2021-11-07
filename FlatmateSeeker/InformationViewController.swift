@@ -40,8 +40,18 @@ class InformationViewController: UIViewController {
             return
         }
         let user = User(_id: Firebase.Auth.auth().currentUser!.uid, _name: name, _city: city, _age: age, _isMale: gender.isEnabled, _occupation: occupation, _hasFlat: flat.isEnabled)
-        FirestoreListener.sharedInstance.downloadUserFromFirestore(user: user)
-        performSegue(withIdentifier: "registrationCompleted", sender: self)
+        if !DataManager.sharedInstance.isEmpty {
+            DataManager.sharedInstance.deleteUser()
+        }
+        DataManager.sharedInstance.createUser(user)
+        FirestoreListener.sharedInstance.addUserToLikeDocument()
+        FirestoreListener.sharedInstance.saveUserWithCompletionHandler(user: user) { user in
+            self.performSegue(withIdentifier: "registrationCompleted", sender: self)
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segue.destination.modalPresentationStyle = .fullScreen
     }
     
     func presentAlert(title: String, message: String){

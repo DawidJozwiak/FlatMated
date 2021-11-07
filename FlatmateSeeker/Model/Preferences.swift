@@ -10,14 +10,14 @@ import Foundation
 enum Preferences: Int {
     case Silence = 0
     case Animals = 1
-    case LoudMusic = 2
+    case Loud_Music = 2
     case Guests = 3
-    case CleanRoom = 4
-    case BeingAlone = 5
-    case DoingChores = 6
+    case Clean_Room = 4
+    case Being_Alone = 5
+    case Doing_Chores = 6
     case Cooking = 7
-    case StayingLate = 8
-    case GoingOut = 9
-    case HouseParties = 10
+    case Staying_Late = 8
+    case Going_Out = 9
+    case House_Parties = 10
     case Alcohol = 11
 }

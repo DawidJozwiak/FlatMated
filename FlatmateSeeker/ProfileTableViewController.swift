@@ -7,8 +7,10 @@
 
 import UIKit
 import Firebase
+import Gallery
+import ProgressHUD
 
-class ProfileTableViewController: UITableViewController, UITextViewDelegate, DislikeDelegate {
+class ProfileTableViewController: UITableViewController, UITextViewDelegate, DislikeDelegate, MatchDelegate {
     @IBOutlet weak var nameAge: UILabel!
     @IBOutlet weak var occupationCity: UILabel!
     @IBOutlet weak var descriptionView: UITextView!
@@ -21,29 +23,36 @@ class ProfileTableViewController: UITableViewController, UITextViewDelegate, Dis
     @IBOutlet weak var pictureBackgroundVIew: UIView!
     @IBOutlet weak var descriptionBackgroundView: UIView!
     @IBOutlet weak var descriptionField: UITextView!
+    @IBOutlet weak var avatarImage: UIImageView!
+    var gallery: GalleryController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.descriptionView.delegate = self
+        FirestoreListener.sharedInstance.listenForMatchChanges()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        FirestoreListener.sharedInstance.delegate = self
         setUpBackground()
         setupProfileInformation()
         setupBackgroundTouch()
     }
     
     func setUpBackground(){
+        self.tableView.separatorColor = self.tableView.backgroundColor
         self.tableView.tableFooterView = nil;
         pictureBackgroundVIew.clipsToBounds = true
         pictureBackgroundVIew.layer.cornerRadius = 100
         pictureBackgroundVIew.layer.maskedCorners = [.layerMaxXMaxYCorner, .layerMinXMaxYCorner]
-        
-        descriptionBackgroundView.layer.cornerRadius = 10
+        tableView.footerView(forSection: 1)?.backgroundColor = UIColor(named: "MyColor")
+        avatarImage.clipsToBounds = true
+        avatarImage.layer.cornerRadius = 100
     }
     
     func setupProfileInformation() {
+        ProgressHUD.show()
         if let id = Auth.auth().currentUser?.uid {
             FirestoreListener.sharedInstance.listenForChanges(id)
         }
@@ -61,6 +70,13 @@ class ProfileTableViewController: UITableViewController, UITextViewDelegate, Dis
         self.firstDisliked.text = disliked.indices.contains(0) ? disliked[0] : ""
         self.secondDisliked.text = disliked.indices.contains(1) ? disliked[1] : ""
         self.thirdDisliked.text = disliked.indices.contains(2) ? disliked[2] : ""
+        
+        FirestoreListener.sharedInstance.getFromCloud(id: Auth.auth().currentUser!.uid, { image in
+            if let image = image {
+                self.avatarImage.image = image
+            }
+            ProgressHUD.dismiss()
+        })
     }
     
     func textViewDidChange(_ textView: UITextView) {
@@ -70,8 +86,8 @@ class ProfileTableViewController: UITableViewController, UITextViewDelegate, Dis
     }
     
     func preferencesChosen(_ preferences: [String : Bool]) {
-        let newLiked = Array(preferences.filter { $0.value == true }.keys) as [String?]
-        let newDisliked = Array(preferences.filter { $0.value == false }.keys) as [String?]
+        let newLiked = Array(preferences.filter { $0.value == true }.keys.map { $0.replacingOccurrences(of: "_", with: " ") }) as [String]
+        let newDisliked = Array(preferences.filter { $0.value == false }.keys.map { $0.replacingOccurrences(of: "_", with: " ") }) as [String]
         
         DataManager.sharedInstance.updateUser(key: "liked", value: newLiked)
         DataManager.sharedInstance.updateUser(key: "disliked", value: newDisliked)
@@ -79,12 +95,9 @@ class ProfileTableViewController: UITableViewController, UITextViewDelegate, Dis
         FirestoreListener.sharedInstance.saveUserToFireStore(user: user)
     }
     
-    public override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1
-    }
-    
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return .leastNormalMagnitude
+    override func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
+        view.backgroundColor = UIColor(named: "MyColor")
+        view.tintColor = UIColor(named: "MyColor")
     }
     
     @IBAction func logoutPressed(_ sender: Any) {
@@ -100,10 +113,32 @@ class ProfileTableViewController: UITableViewController, UITextViewDelegate, Dis
         self.present(secondVC, animated:true, completion:nil)
     }
     
+    @IBAction func editButtonPressed(_ sender: Any) {
+        let secondVC = storyboard?.instantiateViewController(withIdentifier: "InformationViewController") as! InformationViewController
+        secondVC.modalPresentationStyle = .fullScreen
+        self.present(secondVC, animated:true, completion:nil)
+         
+    }
+    
     private func setupBackgroundTouch() {
         view.isUserInteractionEnabled = true
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundTap))
         view.addGestureRecognizer(tapGesture)
+    }
+    
+    private func showGallery() {
+        self.gallery = GalleryController()
+        self.gallery.delegate = self
+        Config.tabsToShow = [.imageTab, .cameraTab]
+        Config.Camera.imageLimit = 1
+        Config.initialTab = .imageTab
+        
+        self.present(gallery, animated: true, completion: nil)
+    }
+    
+    @IBAction func changePictureButton(_ sender: Any) {
+        ProgressHUD.show()
+        showGallery()
     }
     
     @objc func backgroundTap(){
@@ -112,5 +147,40 @@ class ProfileTableViewController: UITableViewController, UITextViewDelegate, Dis
     
     private func dismissKeyboard() {
         self.view.endEditing(false)
+    }
+    
+    func presentNewMatch(_ match: MatchStruct) {
+        let secondVC = storyboard?.instantiateViewController(withIdentifier: "ItsAMatchViewController") as! ItsAMatchViewController
+        secondVC.matchedId = match.likedUserId
+        secondVC.modalPresentationStyle = .overCurrentContext
+        self.present(secondVC, animated:true, completion:nil)
+    }
+}
+
+extension ProfileTableViewController: GalleryControllerDelegate {
+    func galleryController(_ controller: GalleryController, didSelectImages images: [Image]) {
+        if images.count > 0 {
+            images.first!.resolve { img in
+                if let img = img {
+                    self.avatarImage.image = img
+                    FirestoreListener.sharedInstance.uploadToCloud(image: img)
+                    ProgressHUD.dismiss()
+                }
+            }
+        }
+        controller.dismiss(animated: true, completion: nil)
+        ProgressHUD.dismiss()
+    }
+    
+    func galleryController(_ controller: GalleryController, didSelectVideo video: Video) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryController(_ controller: GalleryController, requestLightbox images: [Image]) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+    func galleryControllerDidCancel(_ controller: GalleryController) {
+        controller.dismiss(animated: true, completion: nil)
     }
 }

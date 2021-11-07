@@ -12,7 +12,18 @@
 		6F1DA12F272E1B5A001608F0 /* Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA12E272E1B5A001608F0 /* Preferences.swift */; };
 		6F1DA133272E4034001608F0 /* DislikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA132272E4034001608F0 /* DislikeViewController.swift */; };
 		6F1DA135272F0139001608F0 /* LikeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA134272F0139001608F0 /* LikeTableViewController.swift */; };
+		6F1DA137273069B2001608F0 /* SwipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA136273069B2001608F0 /* SwipeViewController.swift */; };
+		6F1DA13927306DAF001608F0 /* UserSwipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA13827306DAF001608F0 /* UserSwipeCard.swift */; };
+		6F1DA13B27306E8F001608F0 /* UserSwipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA13A27306E8F001608F0 /* UserSwipeModel.swift */; };
+		6F1DA13D27306F47001608F0 /* UserSwipeOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA13C27306F47001608F0 /* UserSwipeOverlay.swift */; };
+		6F1DA13F273072E8001608F0 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA13E273072E8001608F0 /* UIViewExtension.swift */; };
+		6F1DA141273077E3001608F0 /* UserSwipeContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA140273077E3001608F0 /* UserSwipeContent.swift */; };
+		6F1DA1432730812A001608F0 /* UserSwipeFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F1DA1422730812A001608F0 /* UserSwipeFooterView.swift */; };
 		6F217AF72726239C00054924 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F217AF62726239B00054924 /* MainViewController.swift */; };
+		6F6BE9E1273719EA00C2FE42 /* LikeStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6BE9E0273719EA00C2FE42 /* LikeStruct.swift */; };
+		6F6BE9E327371FD800C2FE42 /* ItsAMatchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6BE9E227371FD800C2FE42 /* ItsAMatchViewController.swift */; };
+		6F6BE9E527372AB800C2FE42 /* MatchStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6BE9E427372AB800C2FE42 /* MatchStruct.swift */; };
+		6F6BE9E7273827AB00C2FE42 /* MessengerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6BE9E6273827AA00C2FE42 /* MessengerViewController.swift */; };
 		6FC226D3271C1C0700C3550D /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226D2271C1C0700C3550D /* LoginScreenViewController.swift */; };
 		6FC226D727246AC800C3550D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226D627246AC800C3550D /* RegisterViewController.swift */; };
 		6FC226D927248DE700C3550D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226D827248DE700C3550D /* Log.swift */; };
@@ -63,7 +74,18 @@
 		6F1DA12E272E1B5A001608F0 /* Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preferences.swift; sourceTree = "<group>"; };
 		6F1DA132272E4034001608F0 /* DislikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DislikeViewController.swift; sourceTree = "<group>"; };
 		6F1DA134272F0139001608F0 /* LikeTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeTableViewController.swift; sourceTree = "<group>"; };
+		6F1DA136273069B2001608F0 /* SwipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeViewController.swift; sourceTree = "<group>"; };
+		6F1DA13827306DAF001608F0 /* UserSwipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = UserSwipeCard.swift; path = FlatmateSeeker/UserSwipeCard.swift; sourceTree = SOURCE_ROOT; };
+		6F1DA13A27306E8F001608F0 /* UserSwipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSwipeModel.swift; sourceTree = "<group>"; };
+		6F1DA13C27306F47001608F0 /* UserSwipeOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSwipeOverlay.swift; sourceTree = "<group>"; };
+		6F1DA13E273072E8001608F0 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		6F1DA140273077E3001608F0 /* UserSwipeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSwipeContent.swift; sourceTree = "<group>"; };
+		6F1DA1422730812A001608F0 /* UserSwipeFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSwipeFooterView.swift; sourceTree = "<group>"; };
 		6F217AF62726239B00054924 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = FlatmateSeeker/ViewControllers/MainViewController.swift; sourceTree = SOURCE_ROOT; };
+		6F6BE9E0273719EA00C2FE42 /* LikeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeStruct.swift; sourceTree = "<group>"; };
+		6F6BE9E227371FD800C2FE42 /* ItsAMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItsAMatchViewController.swift; sourceTree = "<group>"; };
+		6F6BE9E427372AB800C2FE42 /* MatchStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStruct.swift; sourceTree = "<group>"; };
+		6F6BE9E6273827AA00C2FE42 /* MessengerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessengerViewController.swift; sourceTree = "<group>"; };
 		6FC226D2271C1C0700C3550D /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		6FC226D627246AC800C3550D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		6FC226D827248DE700C3550D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Log.swift; path = "../New Group/Log.swift"; sourceTree = "<group>"; };
@@ -125,6 +147,8 @@
 			isa = PBXGroup;
 			children = (
 				6FC226E12724CE6600C3550D /* FirestoreListener.swift */,
+				6F6BE9E0273719EA00C2FE42 /* LikeStruct.swift */,
+				6F6BE9E427372AB800C2FE42 /* MatchStruct.swift */,
 				6F217AF62726239B00054924 /* MainViewController.swift */,
 			);
 			path = ViewControllers;
@@ -140,12 +164,17 @@
 		6FC226DA27248DEF00C3550D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6F1DA13827306DAF001608F0 /* UserSwipeCard.swift */,
+				6F1DA13A27306E8F001608F0 /* UserSwipeModel.swift */,
+				6F1DA140273077E3001608F0 /* UserSwipeContent.swift */,
+				6F1DA1422730812A001608F0 /* UserSwipeFooterView.swift */,
 				6FC226E32724D19900C3550D /* UserModel.xcdatamodeld */,
 				6FC226DD2724B16300C3550D /* User.swift */,
 				6FC226D827248DE700C3550D /* Log.swift */,
 				6FC226DF2724CCDC00C3550D /* FirestoreCollection.swift */,
 				6FC226E62724D7E500C3550D /* UserDataManager.swift */,
 				6F1DA12E272E1B5A001608F0 /* Preferences.swift */,
+				6F1DA13C27306F47001608F0 /* UserSwipeOverlay.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -182,12 +211,16 @@
 				6FF0D93D27191786005F2B0B /* SceneDelegate.swift */,
 				6FF0D93F27191786005F2B0B /* ViewController.swift */,
 				6FF0D94127191786005F2B0B /* Main.storyboard */,
+				6F1DA136273069B2001608F0 /* SwipeViewController.swift */,
+				6F6BE9E227371FD800C2FE42 /* ItsAMatchViewController.swift */,
 				6F1DA134272F0139001608F0 /* LikeTableViewController.swift */,
 				6F1DA132272E4034001608F0 /* DislikeViewController.swift */,
 				6F1DA12C272E1652001608F0 /* ProfileTableViewController.swift */,
 				6FC226DB27249C5300C3550D /* InformationViewController.swift */,
+				6F1DA13E273072E8001608F0 /* UIViewExtension.swift */,
 				6FC226D627246AC800C3550D /* RegisterViewController.swift */,
 				6FC226D2271C1C0700C3550D /* LoginScreenViewController.swift */,
+				6F6BE9E6273827AA00C2FE42 /* MessengerViewController.swift */,
 				6FF0D96B27191AD4005F2B0B /* GoogleService-Info.plist */,
 				6FF0D9442719178D005F2B0B /* Assets.xcassets */,
 				6FF0D9462719178D005F2B0B /* LaunchScreen.storyboard */,
@@ -478,19 +511,30 @@
 			files = (
 				6F1DA12D272E1652001608F0 /* ProfileTableViewController.swift in Sources */,
 				6FF0D94027191786005F2B0B /* ViewController.swift in Sources */,
+				6F1DA13F273072E8001608F0 /* UIViewExtension.swift in Sources */,
+				6F6BE9E327371FD800C2FE42 /* ItsAMatchViewController.swift in Sources */,
 				6F1DA135272F0139001608F0 /* LikeTableViewController.swift in Sources */,
 				6F217AF72726239C00054924 /* MainViewController.swift in Sources */,
 				6F1DA12F272E1B5A001608F0 /* Preferences.swift in Sources */,
 				6FC226D727246AC800C3550D /* RegisterViewController.swift in Sources */,
+				6F6BE9E7273827AB00C2FE42 /* MessengerViewController.swift in Sources */,
 				6FC226DC27249C5300C3550D /* InformationViewController.swift in Sources */,
 				6FC226D927248DE700C3550D /* Log.swift in Sources */,
 				6FC226DE2724B16300C3550D /* User.swift in Sources */,
+				6F6BE9E1273719EA00C2FE42 /* LikeStruct.swift in Sources */,
 				6FC226E22724CE6600C3550D /* FirestoreListener.swift in Sources */,
 				6FC226E02724CCDC00C3550D /* FirestoreCollection.swift in Sources */,
+				6F1DA13B27306E8F001608F0 /* UserSwipeModel.swift in Sources */,
+				6F1DA1432730812A001608F0 /* UserSwipeFooterView.swift in Sources */,
+				6F1DA137273069B2001608F0 /* SwipeViewController.swift in Sources */,
 				6FF0D93C27191786005F2B0B /* AppDelegate.swift in Sources */,
 				6F1DA133272E4034001608F0 /* DislikeViewController.swift in Sources */,
+				6F1DA13927306DAF001608F0 /* UserSwipeCard.swift in Sources */,
 				6FC226E72724D7E500C3550D /* UserDataManager.swift in Sources */,
+				6F1DA13D27306F47001608F0 /* UserSwipeOverlay.swift in Sources */,
 				6FC226E52724D19A00C3550D /* UserModel.xcdatamodeld in Sources */,
+				6F6BE9E527372AB800C2FE42 /* MatchStruct.swift in Sources */,
+				6F1DA141273077E3001608F0 /* UserSwipeContent.swift in Sources */,
 				6FC226D3271C1C0700C3550D /* LoginScreenViewController.swift in Sources */,
 				6FF0D93E27191786005F2B0B /* SceneDelegate.swift in Sources */,
 			);

@@ -32,6 +32,12 @@ class DislikeViewController: UITableViewController {
         return true
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if chosenIndexes.contains(indexPath.row){
+            cell.backgroundColor = .lightGray
+        }
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.cellForRow(at: indexPath as IndexPath)?.accessoryType = .checkmark
         chosenIndexes.append(indexPath.row)

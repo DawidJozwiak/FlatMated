@@ -15,7 +15,7 @@ public class User: Equatable {
     var age: Int
     var city: String
     var isMale: Bool
-   // var avatar: UIImage?
+    var avatar: UIImage?
     var occupation: String
     var description: String
     var matchedUsers: [String]
@@ -23,6 +23,7 @@ public class User: Equatable {
     var hasFlat: Bool
     var liked: [String]
     var disliked: [String]
+    var score: Int?
     
     init(_id: String, _name: String, _city: String, _age: Int, _isMale: Bool, _occupation: String, _hasFlat: Bool) {
         id = _id
@@ -30,7 +31,6 @@ public class User: Equatable {
         city = _city
         age = _age
         isMale = _isMale
-        //avatar = _avatar
         hasFlat = _hasFlat
         occupation = _occupation
         description = ""
