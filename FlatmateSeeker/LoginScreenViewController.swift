@@ -19,6 +19,7 @@ class LoginScreenViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        setupBackgroundTouch()
         self.navigationController?.navigationBar.isHidden = true
     }
     
@@ -64,9 +65,6 @@ class LoginScreenViewController: UIViewController {
         view.addGestureRecognizer(tapGesture)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        segue.destination.modalPresentationStyle = .fullScreen
-    }
     
     @objc func backgroundTap(){
         dismissKeyboard()
@@ -75,5 +73,8 @@ class LoginScreenViewController: UIViewController {
     private func dismissKeyboard() {
         self.view.endEditing(false)
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        segue.destination.modalPresentationStyle = .fullScreen
+    }
 }

@@ -478,10 +478,15 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="tintColor" red="0.0" green="0.2784313725" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="barTintColor" red="0.0" green="0.2784313725" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
+                                <integer key="value" value="2"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </tabBar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="number" keyPath="selectedIndex">
-                            <integer key="value" value="1"/>
+                            <integer key="value" value="2"/>
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                     <connections>
@@ -1128,20 +1133,20 @@ As long as the website and the information and services on the website are provi
             </objects>
             <point key="canvasLocation" x="5170" y="422"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Chat-->
         <scene sceneID="R18-FJ-6aV">
             <objects>
-                <tableViewController id="2Tz-Ku-hKL" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="QeA-SP-NBb">
+                <tableViewController id="2Tz-Ku-hKL" customClass="MessengerTableViewController" customModule="FlatmateSeeker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="QeA-SP-NBb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="moZ-xk-Du2">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="moZ-xk-Du2" id="8AE-g4-rRe">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -1151,7 +1156,7 @@ As long as the website and the information and services on the website are provi
                             <outlet property="delegate" destination="2Tz-Ku-hKL" id="bgr-c6-TZG"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="5YJ-QD-S1O"/>
+                    <navigationItem key="navigationItem" title="Chat" id="5YJ-QD-S1O"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V1E-HG-oFK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1161,10 +1166,13 @@ As long as the website and the information and services on the website are provi
         <scene sceneID="EdN-Ru-frD">
             <objects>
                 <navigationController id="OPL-MJ-aa8" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Chat" image="bubble.right.fill" catalog="system" id="0tN-cO-o1R"/>
+                    <tabBarItem key="tabBarItem" title="Chat" image="bubble.right.fill" catalog="system" id="0tN-cO-o1R">
+                        <color key="badgeColor" red="0.0" green="0.2784313725" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="iEf-dN-dv3">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.2784313725" blue="0.56078431370000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
                         <segue destination="2Tz-Ku-hKL" kind="relationship" relationship="rootViewController" id="qtp-hQ-Fqo"/>

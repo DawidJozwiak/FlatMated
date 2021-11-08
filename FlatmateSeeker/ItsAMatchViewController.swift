@@ -34,9 +34,12 @@ class ItsAMatchViewController: UIViewController {
         FirestoreListener.sharedInstance.downloadExistingUserFromFirestore(id: matchedId) { user in
             self.matchedName.text = user?.name ?? ""
         }
+        guard let id = Auth.auth().currentUser?.uid else { return }
+        FirestoreListener.sharedInstance.saveUserFromFireStoreToLocalDB()
         FirestoreListener.sharedInstance.getFromCloud(id: matchedId) { image in
             self.matchedImage.image = image ?? UIImage(named: "emptyImage")
             ProgressHUD.dismiss()
+            FirestoreListener.sharedInstance.createMessagesForMatchedUsers(firstId: id, secondId: self.matchedId)
             self.deleteMatchInformation()
         }
     }

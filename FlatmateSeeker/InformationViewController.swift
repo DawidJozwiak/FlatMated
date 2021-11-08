@@ -19,6 +19,7 @@ class InformationViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackgroundTouch()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +40,7 @@ class InformationViewController: UIViewController {
             presentAlert(title: "Incorrect Input", message: "Please fill all required feilds then press Next button")
             return
         }
-        let user = User(_id: Firebase.Auth.auth().currentUser!.uid, _name: name, _city: city, _age: age, _isMale: gender.isEnabled, _occupation: occupation, _hasFlat: flat.isEnabled)
+        let user = User(_id: Firebase.Auth.auth().currentUser!.uid, _name: name, _city: city, _age: age, _isMale: (gender.selectedSegmentIndex == 0), _occupation: occupation, _hasFlat: flat.isEnabled)
         if !DataManager.sharedInstance.isEmpty {
             DataManager.sharedInstance.deleteUser()
         }
@@ -58,5 +59,20 @@ class InformationViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func setupBackgroundTouch() {
+        view.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    
+    @objc func backgroundTap(){
+        dismissKeyboard()
+    }
+    
+    private func dismissKeyboard() {
+        self.view.endEditing(false)
     }
 }

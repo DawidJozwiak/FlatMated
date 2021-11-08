@@ -21,6 +21,7 @@ class RegisterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupBackgroundTouch()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,6 +32,21 @@ class RegisterViewController: UIViewController {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    private func setupBackgroundTouch() {
+        view.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(backgroundTap))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    
+    @objc func backgroundTap(){
+        dismissKeyboard()
+    }
+    
+    private func dismissKeyboard() {
+        self.view.endEditing(false)
     }
     
     @IBAction func nextButton(_ sender: Any) {

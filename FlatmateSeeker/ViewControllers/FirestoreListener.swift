@@ -9,6 +9,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 import Firebase
+import ProgressHUD
 
 protocol MatchDelegate: AnyObject {
     func presentNewMatch(_ match: MatchStruct)
@@ -76,6 +77,15 @@ class FirestoreListener {
         })
     }
     
+    func saveUserFromFireStoreToLocalDB(){
+        guard let id = Auth.auth().currentUser?.uid else { return }
+        downloadExistingUserFromFirestore(id: id) { user in
+            guard let user = user else { return }
+            DataManager.sharedInstance.deleteUser()
+            DataManager.sharedInstance.createUser(user)
+        }
+    }
+    
     func getFromCloud(id: String, _ completion: @escaping (_ image: UIImage?) -> Void) {
         let storage = Storage.storage()
         let storageRef = storage.reference()
@@ -87,6 +97,20 @@ class FirestoreListener {
             }
             let image = UIImage(data: data)
             completion(image)
+        })
+    }
+    
+    func getFromCloudWithId(id: String, _ completion: @escaping (_ image: UIImage?, _ id: String) -> Void) {
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let avatarRef = storageRef.child("\(id).jpg")
+        _ = avatarRef.getData(maxSize: 10 * 1024 * 1024, completion: { data, error in
+            guard let data = data else {
+                completion(nil, id)
+                return
+            }
+            let image = UIImage(data: data)
+            completion(image, id)
         })
     }
     
@@ -145,8 +169,90 @@ class FirestoreListener {
     func addUserToLikeDocument(){
         guard let id = Auth.auth().currentUser?.uid else { return }
         let emptyArray : [String] = []
-        FirestoreReference(.Like).document(id).setData(["userThatLikedMeId" : emptyArray])
-        FirestoreReference(.Like).document(id).updateData(["userThatILikeId" : emptyArray])
+        checkIfDocumentExists(name: id, collection: .Like) { exists in
+            if !exists {
+                FirestoreReference(.Like).document(id).setData(["userThatLikedMeId" : emptyArray])
+                FirestoreReference(.Like).document(id).updateData(["userThatILikeId" : emptyArray])
+            }
+        }
+    }
+    
+    func getCurrentUserMatches(_ completion: @escaping (_ users: [User]?) -> Void) {
+        guard let id = Auth.auth().currentUser?.uid else { return }
+        downloadExistingUserFromFirestore(id: id) { [self] user in
+            guard let user = user else {
+                completion(nil)
+                return
+            }
+            let matchedIds = user.matchedUsers
+            guard !matchedIds.isEmpty else {
+                ProgressHUD.dismiss()
+                return
+            }
+            getArrayOfUsers(idArray: matchedIds) { users in
+                completion(users)
+            }
+        }
+    }
+    
+    func createMessagesForMatchedUsers(firstId: String, secondId: String){
+        let id = [firstId, secondId].sorted(by: <).joined()
+        checkIfDocumentExists(name: id, collection: .Messenger, { exists in
+            if !exists {
+                let emptyArray : [String : Date] = [:]
+                FirestoreReference(.Messenger).document(id).setData([firstId : emptyArray])
+                FirestoreReference(.Messenger).document(id).updateData([secondId : emptyArray])
+            }
+        })
+    }
+    
+    func saveMessage(firstId: String, secondId: String, isSentByUser: Bool, text: String) {
+        let id = [firstId, secondId].sorted(by: <).joined()
+        let senderId = isSentByUser ? firstId : secondId
+        FirestoreReference(.Messenger).document(id).setData([senderId : [text : Date(timeIntervalSinceNow: 0)]], merge: true)
+    }
+    
+    func getMessages(firstId: String, secondId: String, _ completion: @escaping (_ first: [String : Timestamp]?, _ second: [String : Timestamp]?) -> Void) {
+        let id = [firstId, secondId].sorted(by: <).joined()
+        FirestoreReference(.Messenger).document(id).addSnapshotListener{ snapshot, error in
+            guard let snapshot = snapshot else {
+                completion(nil, nil)
+                return
+            }
+            guard let data = snapshot.data() else {
+                completion(nil, nil)
+                return
+            }
+            let firstUserMessages = data[firstId] as! [String : Timestamp]
+            let secondUserMessages = data[secondId] as! [String : Timestamp]
+            completion(firstUserMessages, secondUserMessages)
+        }
+    }
+    
+    func getArrayOfUsers(idArray: [String], _ completion: @escaping (_ users: [User]?) -> Void) {
+        FirestoreReference(.User).whereField(FieldPath.documentID(), in: idArray).getDocuments { snapshot, error in
+            guard let snapshot = snapshot else {
+                completion(nil)
+                return
+            }
+            let users = snapshot.documents.map {
+                User(dictionary: $0.data())
+            }
+            completion(users)
+        }
+        
+    }
+
+    func checkIfDocumentExists(name: String, collection: FirestoreCollection, _ completion: @escaping (_ exists: Bool) -> Void) {
+        let docRef = FirestoreReference(collection).document(name)
+        docRef.getDocument { (document, error) in
+            guard let document = document else {
+                completion(false)
+                return
+            }
+            completion(document.exists)
+            return
+        }
     }
     
     func listenForMatchChanges(){

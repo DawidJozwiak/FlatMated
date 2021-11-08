@@ -8,6 +8,7 @@
 import UIKit
 import Firebase
 import CoreData
+import IQKeyboardManagerSwift
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
@@ -19,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if #available(iOS 15.0, *) {
             UITableView.appearance().sectionHeaderTopPadding = 0
         }
+        IQKeyboardManager.shared.enable = true
         return true
     }
     
