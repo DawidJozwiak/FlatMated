@@ -42,6 +42,5 @@ class LikeTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let dislikeVC = segue.destination as! DislikeViewController
         dislikeVC.chosenIndexes = self.chosenIndices
-        print(chosenIndices)
     }
 }

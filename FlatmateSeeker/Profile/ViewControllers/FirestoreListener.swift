@@ -59,6 +59,29 @@ class FirestoreListener {
         FirestoreReference(.Like).document(id).updateData(property)
     }
     
+    func listenForMatchChanges(){
+        guard let id = Auth.auth().currentUser?.uid else { return }
+        FirestoreReference(.Like).document(id).addSnapshotListener { snapshot, error in
+            if let error = error {
+                print(#file, #function, error.localizedDescription, 1, [1,2], to: &Log.log)
+                return
+            }
+            guard let snapshot = snapshot else {
+                print(#file, #function, "Problem with document", 1, [1,2], to: &Log.log)
+                return
+            }
+            guard snapshot.exists else { return }
+            guard let likeData = snapshot.data() else { return }
+            let likedMe = likeData["userThatLikedMeId"] as? [String] ?? []
+            let iLike = likeData["userThatILikeId"] as? [String] ?? []
+            let commonPart = Set(likedMe).intersection(Set(iLike))
+            if !commonPart.isEmpty {
+                let dictionary = ["likedUserId" : commonPart.first!, "userId" : id] as [String : Any]
+                self.delegate?.presentNewMatch(MatchStruct(dictionary: dictionary))
+            }
+        }
+    }
+    
     func downloadExistingUserFromFirestore(id: String, _ completion: @escaping (_ user: User?) -> Void) {
         FirestoreReference(.User).document(id).getDocument(completion: { (snapshot, error) in
             guard let snapshot = snapshot else {
@@ -255,28 +278,7 @@ class FirestoreListener {
         }
     }
     
-    func listenForMatchChanges(){
-        guard let id = Auth.auth().currentUser?.uid else { return }
-        FirestoreReference(.Like).document(id).addSnapshotListener { snapshot, error in
-            if let error = error {
-                print(#file, #function, error.localizedDescription, 1, [1,2], to: &Log.log)
-                return
-            }
-            guard let snapshot = snapshot else {
-                print(#file, #function, "Problem with document", 1, [1,2], to: &Log.log)
-                return
-            }
-            guard snapshot.exists else { return }
-            guard let likeData = snapshot.data() else { return }
-            let likedMe = likeData["userThatLikedMeId"] as? [String] ?? []
-            let iLike = likeData["userThatILikeId"] as? [String] ?? []
-            let commonPart = Set(likedMe).intersection(Set(iLike))
-            if !commonPart.isEmpty {
-                let dictionary = ["likedUserId" : commonPart.first!, "userId" : id] as [String : Any]
-                self.delegate?.presentNewMatch(MatchStruct(dictionary: dictionary))
-            }
-        }
-    }
+    
     
     func checkIfAnotherUserMatchedAsWell(id likedId: String, _ completion: @escaping (_ isMatched: Bool) -> Void) {
         guard let id = Auth.auth().currentUser?.uid else { return }

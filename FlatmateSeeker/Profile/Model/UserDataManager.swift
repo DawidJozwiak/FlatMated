@@ -84,7 +84,6 @@ open class DataManager: NSObject {
         } catch let error as NSError {
             print("Failed to delete user! \(error): \(error.userInfo)")
         }
-        
     }
     
     func retriveCurrentUserObject() -> User {

@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import Gallery
 import ProgressHUD
+import IQKeyboardManagerSwift
 
 class ProfileTableViewController: UITableViewController, UITextViewDelegate, DislikeDelegate, MatchDelegate {
     @IBOutlet weak var nameAge: UILabel!
@@ -38,6 +39,7 @@ class ProfileTableViewController: UITableViewController, UITextViewDelegate, Dis
         setUpBackground()
         setupProfileInformation()
         setupBackgroundTouch()
+        IQKeyboardManager.shared.enable = true
     }
     
     func setUpBackground(){

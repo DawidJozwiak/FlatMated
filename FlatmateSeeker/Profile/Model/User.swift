@@ -71,7 +71,6 @@ public class User: Equatable {
         self.description = dictionary["description"] as! String
         self.hasFlat = dictionary["hasFlat"] as! Bool
         self.matchedUsers = dictionary["matchedUsers"] as! [String]
-        
         self.liked = dictionary["liked"] as! [String]
         self.disliked = dictionary["disliked"] as! [String]
     }

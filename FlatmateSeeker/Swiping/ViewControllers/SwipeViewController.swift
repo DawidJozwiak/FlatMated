@@ -44,6 +44,8 @@ class SwipeViewController: UIViewController, SwipeCardStackDelegate, SwipeCardSt
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        usersArray.removeAll()
+        cards.removeAll()
         FirestoreListener.sharedInstance.delegate = self
         let liked = DataManager.sharedInstance.retrieveUser()?.value(forKey: "liked") as! [String]
         let disliked = DataManager.sharedInstance.retrieveUser()?.value(forKey: "disliked") as! [String]
@@ -57,7 +59,38 @@ class SwipeViewController: UIViewController, SwipeCardStackDelegate, SwipeCardSt
     }
     
     func didSwipeAllCards(_ cardStack: SwipeCardStack) {
-        print("lmao")
+    }
+    
+    private func getUsers(liked: [String], disliked: [String], city: String, matched: [String], swipedUsers: [String]){
+        ProgressHUD.show()
+        FirestoreListener.sharedInstance.downloadUsersToSwiping(city: city) { [self] users in
+            guard let users = users, users.count != 0 else {
+                ProgressHUD.dismiss()
+                return
+            }
+            users.forEach { $0.score = rateUser(user: $0, yourLiked: liked, yourDisliked: disliked)}
+            self.usersArray = users
+            for user in self.usersArray {
+                FirestoreListener.sharedInstance.getFromCloud(id: user.id) { image in
+                    let card = UserSwipeModel(id: user.id, name: user.name, city: user.city, age: user.age, occupation: user.occupation, image: image ?? UIImage(named: "emptyImage"), description: user.description, hasFlat: user.hasFlat, isMale: user.isMale, score: user.score ?? 0)
+                    self.cards.append(card)
+                    DispatchQueue.main.async {
+                        ProgressHUD.dismiss()
+                        self.cards = cards.sorted(by: { $0.score > $1.score }).filter { !matched.contains($0.id) && !swipedUsers.contains($0.id) }
+                        self.layoutCardsStack()
+                    }
+                }}
+        }
+    }
+    
+    
+    private func rateUser(user: User, yourLiked: [String], yourDisliked: [String])  -> Int{
+        var score = 0
+        score += user.liked.filter(yourLiked.contains).count
+        score += user.disliked.filter(yourDisliked.contains).count
+        score -= yourDisliked.filter(user.liked.contains).count * 2
+        score -= yourLiked.filter(user.disliked.contains).count * 2
+        return score
     }
     
     func cardStack(_ cardStack: SwipeCardStack, didSwipeCardAt index: Int, with direction: SwipeDirection) {
@@ -85,44 +118,12 @@ class SwipeViewController: UIViewController, SwipeCardStackDelegate, SwipeCardSt
         self.presentAlert(description: self.cards[index].description) 
     }
     
-    private func getUsers(liked: [String], disliked: [String], city: String, matched: [String], swipedUsers: [String]){
-        ProgressHUD.show()
-        FirestoreListener.sharedInstance.downloadUsersToSwiping(city: city) { [self] users in
-            guard let users = users, users.count != 0 else {
-                ProgressHUD.dismiss()
-                return
-            }
-            users.forEach { $0.score = rateUser(user: $0, yourLiked: liked, yourDisliked: disliked)}
-            self.usersArray = users
-            for user in self.usersArray {
-                FirestoreListener.sharedInstance.getFromCloud(id: user.id) { image in
-                    let card = UserSwipeModel(id: user.id, name: user.name, city: user.city, age: user.age, occupation: user.occupation, image: image ?? UIImage(named: "emptyImage"), description: user.description, hasFlat: user.hasFlat, isMale: user.isMale, score: user.score ?? 0)
-                    self.cards.append(card)
-                    DispatchQueue.main.async {
-                        ProgressHUD.dismiss()
-                        self.cards = cards.sorted(by: { $0.score > $1.score }).filter { !matched.contains($0.id) && !swipedUsers.contains($0.id) }
-                        self.layoutCardsStack()
-                    }
-                }}
-        }
-    }
-
     func presentNewMatch(_ match: MatchStruct) {
         let secondVC = storyboard?.instantiateViewController(withIdentifier: "ItsAMatchViewController") as! ItsAMatchViewController
         secondVC.matchedId = match.likedUserId
         secondVC.modalPresentationStyle = .overCurrentContext
         self.present(secondVC, animated:true, completion:nil)
     }
-    
-    private func rateUser(user: User, yourLiked: [String], yourDisliked: [String])  -> Int{
-        var score = 0
-        score += user.liked.filter(yourLiked.contains).count
-        score += user.disliked.filter(yourDisliked.contains).count
-        score -= yourDisliked.filter(user.liked.contains).count * 2
-        score -= yourLiked.filter(user.disliked.contains).count * 2
-        return score
-    }
-    
     
     private func presentAlert(description: String){
         let alert = UIAlertController(title: "About me", message: description, preferredStyle: .alert)

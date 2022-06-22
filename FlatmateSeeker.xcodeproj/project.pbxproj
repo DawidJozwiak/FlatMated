@@ -32,13 +32,13 @@
 		6F6BE9F82738B7E600C2FE42 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 6F6BE9F72738B7E600C2FE42 /* IQKeyboardManagerSwift */; };
 		6FC226D3271C1C0700C3550D /* LoginScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226D2271C1C0700C3550D /* LoginScreenViewController.swift */; };
 		6FC226D727246AC800C3550D /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226D627246AC800C3550D /* RegisterViewController.swift */; };
-		6FC226D927248DE700C3550D /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226D827248DE700C3550D /* Log.swift */; };
 		6FC226DC27249C5300C3550D /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226DB27249C5300C3550D /* InformationViewController.swift */; };
 		6FC226DE2724B16300C3550D /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226DD2724B16300C3550D /* User.swift */; };
 		6FC226E02724CCDC00C3550D /* FirestoreCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226DF2724CCDC00C3550D /* FirestoreCollection.swift */; };
 		6FC226E22724CE6600C3550D /* FirestoreListener.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226E12724CE6600C3550D /* FirestoreListener.swift */; };
 		6FC226E52724D19A00C3550D /* UserModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226E32724D19900C3550D /* UserModel.xcdatamodeld */; };
 		6FC226E72724D7E500C3550D /* UserDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FC226E62724D7E500C3550D /* UserDataManager.swift */; };
+		6FE4E2362739DCA0008CAFDA /* Log.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE4E2352739DCA0008CAFDA /* Log.swift */; };
 		6FF0D93C27191786005F2B0B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0D93B27191786005F2B0B /* AppDelegate.swift */; };
 		6FF0D93E27191786005F2B0B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0D93D27191786005F2B0B /* SceneDelegate.swift */; };
 		6FF0D94027191786005F2B0B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FF0D93F27191786005F2B0B /* ViewController.swift */; };
@@ -87,7 +87,7 @@
 		6F1DA13E273072E8001608F0 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		6F1DA140273077E3001608F0 /* UserSwipeContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSwipeContent.swift; sourceTree = "<group>"; };
 		6F1DA1422730812A001608F0 /* UserSwipeFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSwipeFooterView.swift; sourceTree = "<group>"; };
-		6F217AF62726239B00054924 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = FlatmateSeeker/ViewControllers/MainViewController.swift; sourceTree = SOURCE_ROOT; };
+		6F217AF62726239B00054924 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = FlatmateSeeker/Helpers/MainViewController.swift; sourceTree = SOURCE_ROOT; };
 		6F6BE9E0273719EA00C2FE42 /* LikeStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeStruct.swift; sourceTree = "<group>"; };
 		6F6BE9E227371FD800C2FE42 /* ItsAMatchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItsAMatchViewController.swift; sourceTree = "<group>"; };
 		6F6BE9E427372AB800C2FE42 /* MatchStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStruct.swift; sourceTree = "<group>"; };
@@ -99,13 +99,13 @@
 		6F6BE9F4273872A100C2FE42 /* SenderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SenderModel.swift; sourceTree = "<group>"; };
 		6FC226D2271C1C0700C3550D /* LoginScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreenViewController.swift; sourceTree = "<group>"; };
 		6FC226D627246AC800C3550D /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		6FC226D827248DE700C3550D /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Log.swift; path = "../New Group/Log.swift"; sourceTree = "<group>"; };
 		6FC226DB27249C5300C3550D /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		6FC226DD2724B16300C3550D /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		6FC226DF2724CCDC00C3550D /* FirestoreCollection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreCollection.swift; sourceTree = "<group>"; };
 		6FC226E12724CE6600C3550D /* FirestoreListener.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreListener.swift; sourceTree = "<group>"; };
 		6FC226E42724D19A00C3550D /* UserModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = UserModel.xcdatamodel; sourceTree = "<group>"; };
 		6FC226E62724D7E500C3550D /* UserDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDataManager.swift; sourceTree = "<group>"; };
+		6FE4E2352739DCA0008CAFDA /* Log.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Log.swift; sourceTree = "<group>"; };
 		6FF0D93827191786005F2B0B /* FlatmateSeeker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlatmateSeeker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF0D93B27191786005F2B0B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FF0D93D27191786005F2B0B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -155,17 +155,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		6FC226D4271C1CB300C3550D /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				6FC226E12724CE6600C3550D /* FirestoreListener.swift */,
-				6F6BE9E0273719EA00C2FE42 /* LikeStruct.swift */,
-				6F6BE9E427372AB800C2FE42 /* MatchStruct.swift */,
-				6F217AF62726239B00054924 /* MainViewController.swift */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
 		6FC226D5271C1CBF00C3550D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -178,19 +167,127 @@
 		6FC226DA27248DEF00C3550D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6F6BE9E427372AB800C2FE42 /* MatchStruct.swift */,
 				6F1DA13827306DAF001608F0 /* UserSwipeCard.swift */,
 				6F1DA13A27306E8F001608F0 /* UserSwipeModel.swift */,
 				6F1DA140273077E3001608F0 /* UserSwipeContent.swift */,
-				6F1DA1422730812A001608F0 /* UserSwipeFooterView.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6FE4E22C2739CB9B008CAFDA /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				6FE4E2312739D1EB008CAFDA /* ViewControllers */,
+				6FE4E2302739D1E0008CAFDA /* View */,
+				6FE4E22F2739CBCB008CAFDA /* Model */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		6FE4E22D2739CBA5008CAFDA /* Swiping */ = {
+			isa = PBXGroup;
+			children = (
+				6FE4E2382739DCF6008CAFDA /* VIew */,
+				6FE4E2372739DCDF008CAFDA /* ViewControllers */,
+				6FC226DA27248DEF00C3550D /* Model */,
+			);
+			path = Swiping;
+			sourceTree = "<group>";
+		};
+		6FE4E22E2739CBB7008CAFDA /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+				6FC226D5271C1CBF00C3550D /* View */,
+				6FE4E2332739DBC8008CAFDA /* ViewControllers */,
+				6FE4E2322739DBB3008CAFDA /* Model */,
+			);
+			path = Chat;
+			sourceTree = "<group>";
+		};
+		6FE4E22F2739CBCB008CAFDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				6FC226E32724D19900C3550D /* UserModel.xcdatamodeld */,
 				6FC226DD2724B16300C3550D /* User.swift */,
-				6FC226D827248DE700C3550D /* Log.swift */,
+				6F6BE9E0273719EA00C2FE42 /* LikeStruct.swift */,
 				6FC226DF2724CCDC00C3550D /* FirestoreCollection.swift */,
 				6FC226E62724D7E500C3550D /* UserDataManager.swift */,
 				6F1DA12E272E1B5A001608F0 /* Preferences.swift */,
-				6F1DA13C27306F47001608F0 /* UserSwipeOverlay.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6FE4E2302739D1E0008CAFDA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6FF0D94127191786005F2B0B /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6FE4E2312739D1EB008CAFDA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6F1DA134272F0139001608F0 /* LikeTableViewController.swift */,
+				6F1DA132272E4034001608F0 /* DislikeViewController.swift */,
+				6FC226D627246AC800C3550D /* RegisterViewController.swift */,
+				6FC226D2271C1C0700C3550D /* LoginScreenViewController.swift */,
+				6FC226DB27249C5300C3550D /* InformationViewController.swift */,
+				6FC226E12724CE6600C3550D /* FirestoreListener.swift */,
+				6F1DA12C272E1652001608F0 /* ProfileTableViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6FE4E2322739DBB3008CAFDA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6F6BE9F4273872A100C2FE42 /* SenderModel.swift */,
+				6F6BE9F02738707E00C2FE42 /* MessageModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6FE4E2332739DBC8008CAFDA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6F6BE9EE273844D600C2FE42 /* MessengerTableViewController.swift */,
+				6F6BE9F22738724A00C2FE42 /* MessengerViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6FE4E2342739DC92008CAFDA /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				6FF0D9462719178D005F2B0B /* LaunchScreen.storyboard */,
+				6F217AF62726239B00054924 /* MainViewController.swift */,
+				6FE4E2352739DCA0008CAFDA /* Log.swift */,
+				6FF0D93B27191786005F2B0B /* AppDelegate.swift */,
+				6FF0D93D27191786005F2B0B /* SceneDelegate.swift */,
+				6FF0D93F27191786005F2B0B /* ViewController.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		6FE4E2372739DCDF008CAFDA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				6F1DA136273069B2001608F0 /* SwipeViewController.swift */,
+				6F6BE9E227371FD800C2FE42 /* ItsAMatchViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		6FE4E2382739DCF6008CAFDA /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				6F1DA13E273072E8001608F0 /* UIViewExtension.swift */,
+				6F1DA13C27306F47001608F0 /* UserSwipeOverlay.swift */,
+				6F1DA1422730812A001608F0 /* UserSwipeFooterView.swift */,
+			);
+			path = VIew;
 			sourceTree = "<group>";
 		};
 		6FF0D92F27191785005F2B0B = {
@@ -218,29 +315,12 @@
 		6FF0D93A27191786005F2B0B /* FlatmateSeeker */ = {
 			isa = PBXGroup;
 			children = (
-				6FC226DA27248DEF00C3550D /* Model */,
-				6FC226D5271C1CBF00C3550D /* View */,
-				6FC226D4271C1CB300C3550D /* ViewControllers */,
-				6FF0D93B27191786005F2B0B /* AppDelegate.swift */,
-				6FF0D93D27191786005F2B0B /* SceneDelegate.swift */,
-				6FF0D93F27191786005F2B0B /* ViewController.swift */,
-				6FF0D94127191786005F2B0B /* Main.storyboard */,
-				6F6BE9F22738724A00C2FE42 /* MessengerViewController.swift */,
-				6F6BE9F4273872A100C2FE42 /* SenderModel.swift */,
-				6F6BE9F02738707E00C2FE42 /* MessageModel.swift */,
-				6F6BE9EE273844D600C2FE42 /* MessengerTableViewController.swift */,
-				6F1DA136273069B2001608F0 /* SwipeViewController.swift */,
-				6F6BE9E227371FD800C2FE42 /* ItsAMatchViewController.swift */,
-				6F1DA134272F0139001608F0 /* LikeTableViewController.swift */,
-				6F1DA132272E4034001608F0 /* DislikeViewController.swift */,
-				6F1DA12C272E1652001608F0 /* ProfileTableViewController.swift */,
-				6FC226DB27249C5300C3550D /* InformationViewController.swift */,
-				6F1DA13E273072E8001608F0 /* UIViewExtension.swift */,
-				6FC226D627246AC800C3550D /* RegisterViewController.swift */,
-				6FC226D2271C1C0700C3550D /* LoginScreenViewController.swift */,
+				6FE4E2342739DC92008CAFDA /* Helpers */,
+				6FE4E22E2739CBB7008CAFDA /* Chat */,
+				6FE4E22D2739CBA5008CAFDA /* Swiping */,
+				6FE4E22C2739CB9B008CAFDA /* Profile */,
 				6FF0D96B27191AD4005F2B0B /* GoogleService-Info.plist */,
 				6FF0D9442719178D005F2B0B /* Assets.xcassets */,
-				6FF0D9462719178D005F2B0B /* LaunchScreen.storyboard */,
 				6FF0D9492719178D005F2B0B /* Info.plist */,
 			);
 			path = FlatmateSeeker;
@@ -535,6 +615,7 @@
 			files = (
 				6F1DA12D272E1652001608F0 /* ProfileTableViewController.swift in Sources */,
 				6FF0D94027191786005F2B0B /* ViewController.swift in Sources */,
+				6FE4E2362739DCA0008CAFDA /* Log.swift in Sources */,
 				6F1DA13F273072E8001608F0 /* UIViewExtension.swift in Sources */,
 				6F6BE9E327371FD800C2FE42 /* ItsAMatchViewController.swift in Sources */,
 				6F1DA135272F0139001608F0 /* LikeTableViewController.swift in Sources */,
@@ -543,7 +624,6 @@
 				6FC226D727246AC800C3550D /* RegisterViewController.swift in Sources */,
 				6F6BE9F5273872A100C2FE42 /* SenderModel.swift in Sources */,
 				6FC226DC27249C5300C3550D /* InformationViewController.swift in Sources */,
-				6FC226D927248DE700C3550D /* Log.swift in Sources */,
 				6FC226DE2724B16300C3550D /* User.swift in Sources */,
 				6F6BE9E1273719EA00C2FE42 /* LikeStruct.swift in Sources */,
 				6FC226E22724CE6600C3550D /* FirestoreListener.swift in Sources */,
@@ -961,8 +1041,7 @@
 				6FC226E42724D19A00C3550D /* UserModel.xcdatamodel */,
 			);
 			currentVersion = 6FC226E42724D19A00C3550D /* UserModel.xcdatamodel */;
-			name = UserModel.xcdatamodeld;
-			path = ../UserModel.xcdatamodeld;
+			path = UserModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

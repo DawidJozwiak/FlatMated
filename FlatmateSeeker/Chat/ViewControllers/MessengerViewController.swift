@@ -10,6 +10,7 @@ import MessageKit
 import InputBarAccessoryView
 import ProgressHUD
 import Firebase
+import IQKeyboardManagerSwift
 
 class MessengerViewController: MessagesViewController, MessagesLayoutDelegate, MessagesDataSource, MessagesDisplayDelegate {
 
@@ -34,6 +35,11 @@ class MessengerViewController: MessagesViewController, MessagesLayoutDelegate, M
             layout.textMessageSizeCalculator.incomingAvatarSize = .zero
         }
         setupBackgroundTouch()
+    }
+    
+    override func viewWillAppear(_ animated: Bool){
+        super.viewWillAppear(animated)
+        IQKeyboardManager.shared.enable = false
     }
     
     func currentSender() -> SenderType {
